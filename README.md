@@ -1,5 +1,6 @@
-# JANA Platform
-
-JANA AI Product Engineering & Operating Environment.
-
-Kaavosh is the first production-oriented supplier research application built on the JANA runtime principles.
+# JANA Platform — Kaavosh
+JANA AI Product Engineering & Operating Environment. Kaavosh (کاوش) is the supplier-research product.
+## Run
+npm install && cp .env.example .env && npm run dev
+## Verify
+npm run typecheck && npm test && npm run build
