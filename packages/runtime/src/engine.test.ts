@@ -1,0 +1,3 @@
+import test from"node:test";import assert from"node:assert/strict";import{EventBus,PermissionSet,ResearchEngine}from"./index.js";
+test("permission denial",()=>assert.throws(()=>new PermissionSet(["read_files"]).require("network"),/Permission denied/));
+test("research deduplicates evidence",async()=>{const e=new ResearchEngine(new EventBus(),[{name:"test",async search(){return[{title:"A",url:"https://a.example",snippet:"x"},{title:"A2",url:"https://a.example",snippet:"x"}]}}]);const r=await e.run({id:"r",name:"Researcher",purpose:"research",version:"1",tools:["test"],permissions:["network"],guardrails:[]},{product:"flower dye",destination:"Tehran"});assert.equal(r.status,"completed");assert.equal(r.candidates.length,1)});

@@ -1,0 +1,1 @@
+import type{Permission}from"./types.js";export class PermissionSet{private permissions:Set<Permission>;constructor(p:Permission[]=[]){this.permissions=new Set(p)}has(p:Permission){return this.permissions.has(p)}require(p:Permission){if(!this.has(p))throw new Error(`Permission denied: ${p}`)}toArray(){return[...this.permissions]}}

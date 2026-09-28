@@ -1,0 +1,3 @@
+export type JanaEventName="ProjectCreated"|"TaskCreated"|"AgentStarted"|"ToolCalled"|"TestFailed"|"TestPassed"|"BuildCompleted"|"DeploymentStarted"|"DeploymentCompleted"|"BackupCreated"|"RollbackStarted"|"RunFailed"|"RunCompleted";
+export interface JanaEvent{id:string;name:JanaEventName;at:string;projectId?:string;runId?:string;data?:Record<string,unknown>}
+export class EventBus{private listeners=new Map<JanaEventName,Set<(e:JanaEvent)=>void>>();subscribe(n:JanaEventName,fn:(e:JanaEvent)=>void){const s=this.listeners.get(n)??new Set();s.add(fn);this.listeners.set(n,s);return()=>s.delete(fn)}publish(e:JanaEvent){this.listeners.get(e.name)?.forEach(fn=>fn(e))}}

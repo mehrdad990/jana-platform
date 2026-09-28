@@ -1,0 +1,2 @@
+# Security
+No secrets in Git. Credentials are environment-only. Sensitive actions (vendor messaging, GitHub writes, deployment, production changes) require approval. Demo evidence must never be labeled verified. Production needs real identity, secret management and persisted audit events.

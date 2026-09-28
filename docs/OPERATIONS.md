@@ -1,0 +1,2 @@
+# Operations
+GET /api/health. POST /api/research with {product,destination,countries}. The current research endpoint intentionally uses a demo adapter; production provider credentials must be wired through provider-specific adapters. Recovery: preserve run/events → stop failing workflow → diagnose → restore known-good version → test/verify → resume.
