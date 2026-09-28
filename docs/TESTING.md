@@ -1,0 +1,2 @@
+# Testing
+Runtime unit tests cover permission denial and research deduplication. CI runs typecheck, tests and Next production build. Provider adapters must add integration tests when credentials are connected. Production acceptance additionally requires deployment verification and recovery testing.

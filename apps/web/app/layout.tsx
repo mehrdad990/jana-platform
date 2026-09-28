@@ -1,0 +1,1 @@
+import"./globals.css";import type{ReactNode}from"react";export const metadata={title:"کاوش | هوشمند تحقیق و تأمین",description:"JANA Kaavosh"};export default function Layout({children}:{children:ReactNode}){return <html lang="fa" dir="rtl"><body>{children}</body></html>}
